@@ -303,24 +303,138 @@
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
   .reveal.in{opacity:1;transform:none}
 
+  /* TABLET */
+  @media (max-width:1024px){
+    .wrap{padding:0 1.25rem}
+    .hero{gap:2rem;padding:3.5rem 0 4rem}
+    .hero h1{font-size:clamp(3.2rem,9vw,7rem)}
+    section{padding:4rem 0}
+    .cases{gap:1.2rem}
+    .case.feat h3{font-size:2rem}
+    .certs{grid-template-columns:repeat(2,1fr)}
+  }
+
   /* MOBILE */
-  @media (max-width:880px){
-    .hero{grid-template-columns:1fr;gap:2rem;padding:2.5rem 0 3rem}
+  @media (max-width:768px){
+    html,body{font-size:13.5px}
+    .wrap{padding:0 1.1rem}
+
+    /* Status bar collapses to two lines */
+    .bar{
+      grid-template-columns:1fr auto;gap:.6rem;
+      padding:.55rem 1rem;font-size:10px;letter-spacing:.1em;
+    }
+    .bar .left{gap:.7rem;flex-wrap:nowrap;overflow:hidden}
+    .bar .left span:nth-child(2){display:none}
+    .bar .center{display:none}
+    .bar .right{justify-content:flex-end}
+    .bar .right span:nth-child(2){display:none}
+
+    /* Hero stacks */
+    .hero{grid-template-columns:1fr;gap:2.5rem;padding:2rem 0 3rem}
+    .hero h1{
+      font-size:clamp(3.4rem,17vw,5.5rem);
+      margin:1rem 0 1.2rem;
+      line-height:.88;
+    }
+    .hero .summary{font-size:14px;line-height:1.65}
+    .hero .role{font-size:10px;padding:.3rem .65rem}
+    .hero .cta{gap:.7rem}
+    .btn{padding:.8rem 1.05rem;font-size:10.5px;flex:1;justify-content:center;min-width:0}
+    .dossier{padding:1rem;max-width:420px;margin:0 auto;width:100%}
+    .dossier::before{font-size:9.5px}
+    .meta{font-size:11px;gap:.4rem .8rem}
+
+    /* Section heads */
+    .sec-head{
+      grid-template-columns:auto 1fr;gap:1rem;
+      margin-bottom:2rem;align-items:center;
+    }
+    .sec-num{font-size:2.2rem}
+    .sec-title{font-size:1.55rem;line-height:1.1}
+    .sec-aside{display:none}
+
+    /* About */
+    section{padding:3.25rem 0}
     .about{grid-template-columns:1fr;gap:2rem}
-    .skills{grid-template-columns:1fr}
-    .skill-row:nth-child(odd){border-right:none;padding-right:0}
-    .skill-row:nth-child(even){padding-left:0}
-    .skill-row{grid-template-columns:1fr;gap:.8rem}
-    .op{grid-template-columns:1fr;gap:.5rem}
-    .op .where{text-align:left}
-    .cases{grid-template-columns:1fr}
+    .about p{font-size:14px;line-height:1.7}
+    .stat-grid{grid-template-columns:1fr 1fr}
+    .stat{padding:1rem}
+    .stat .v{font-size:1.85rem}
+    .stat .l{font-size:9.5px}
+
+    /* Skills */
+    .skills{grid-template-columns:1fr;border-top:none}
+    .skill-row,
+    .skill-row:nth-child(odd),
+    .skill-row:nth-child(even){
+      grid-template-columns:1fr;gap:.7rem;
+      padding:1.15rem 0;border-right:none;
+      padding-left:0;padding-right:0;
+    }
+    .skill-row .cat{font-size:1.05rem}
+    .pill{font-size:11px;padding:.25rem .55rem}
+
+    /* Ops log */
+    .op{
+      grid-template-columns:1fr;gap:.5rem;
+      padding:1.3rem 0;
+    }
+    .op .when{font-size:10.5px}
+    .op .what{font-size:1.25rem}
+    .op .what span{font-size:11px;margin-top:.3rem}
+    .op .where{text-align:left;font-size:10.5px;display:flex;align-items:center;flex-wrap:wrap;gap:.4rem}
+    .status{margin-left:0;font-size:9.5px}
+
+    /* Case files */
+    .cases{grid-template-columns:1fr;gap:1rem}
+    .case{padding:1.4rem}
+    .case h3{font-size:1.35rem;line-height:1.2}
     .case.feat{grid-column:span 1}
     .case.feat h3{font-size:1.6rem}
-    .certs{grid-template-columns:1fr 1fr}
-    .sec-head{grid-template-columns:auto 1fr;gap:1rem}
-    .sec-aside{display:none}
-    .bar{grid-template-columns:1fr auto;font-size:10px}
-    .bar .right{display:none}
+    .case.feat .blurb{font-size:13.5px}
+    .case .blurb{font-size:13px}
+    .case .stack{margin-top:1rem;padding-top:1rem;gap:.35rem}
+    .case .stack span{font-size:10.5px;padding:.15rem .5rem}
+    .case .footer{font-size:9.5px;gap:.6rem;flex-wrap:wrap}
+
+    /* Certs */
+    .certs{grid-template-columns:1fr;gap:.8rem}
+    .cert{padding:1rem}
+    .cert h4{font-size:1.05rem}
+
+    /* Contact */
+    .contact{padding:4.5rem 0}
+    .contact h2{font-size:clamp(2.6rem,11vw,4rem);margin:1.2rem 0 1.6rem}
+    .contact a.mail{
+      padding:.9rem 1.1rem;font-size:12px;
+      word-break:break-all;display:inline-block;max-width:100%;
+    }
+    .contact .links{gap:1rem 1.5rem;font-size:10.5px;margin-top:1.5rem}
+    .contact .kicker{font-size:10.5px;letter-spacing:.22em}
+
+    footer{
+      padding:1.25rem 1.1rem;font-size:9.5px;
+      justify-content:center;text-align:center;gap:.6rem;
+    }
+    footer span:nth-child(3){display:none}
+  }
+
+  /* SMALL MOBILE */
+  @media (max-width:380px){
+    .hero h1{font-size:3rem}
+    .hero .cta{flex-direction:column}
+    .btn{width:100%}
+    .stat-grid{grid-template-columns:1fr}
+    .sec-num{font-size:1.8rem}
+    .sec-title{font-size:1.35rem}
+  }
+
+  /* Disable hover transforms on touch */
+  @media (hover:none){
+    .case:hover{transform:none}
+    .btn:hover{transform:none}
+    .pill:hover{transform:none}
   }
 </style>
 </head>
